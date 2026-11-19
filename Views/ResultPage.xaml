@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuizApp.ViewModels"
+             x:Class="QuizApp.Views.ResultPage"
+             x:DataType="vm:ResultViewModel"
+             Title="Результат">
+
+    <VerticalStackLayout Padding="24" Spacing="16" VerticalOptions="Center">
+        <Label Text="{Binding Topic}" FontSize="20" HorizontalOptions="Center" />
+        <Label Text="{Binding ScoreText}"
+               FontSize="56"
+               FontAttributes="Bold"
+               HorizontalOptions="Center" />
+        <ProgressBar Progress="{Binding Percent}" />
+        <Label Text="{Binding Percent, StringFormat='{0:P0} правильних відповідей'}" HorizontalOptions="Center" />
+        <Label Text="{Binding TimeText}" HorizontalOptions="Center" TextColor="Gray" />
+        <Label Text="{Binding Message}" FontSize="18" HorizontalOptions="Center" Margin="0,8" />
+
+        <Button Text="Спробувати ще раз" Command="{Binding AgainCommand}" />
+        <Button Text="До вибору теми" Command="{Binding HomeCommand}" BackgroundColor="Gray" />
+    </VerticalStackLayout>
+</ContentPage>

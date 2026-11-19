@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuizApp.ViewModels"
+             xmlns:m="clr-namespace:QuizApp.Models"
+             x:Class="QuizApp.Views.HistoryPage"
+             x:DataType="vm:HistoryViewModel"
+             Title="Історія">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Очистити" Command="{Binding ClearCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <Grid RowDefinitions="Auto,*" Padding="16,8">
+        <Label Text="{Binding Summary}" FontAttributes="Bold" Margin="0,8" />
+
+        <CollectionView Grid.Row="1" ItemsSource="{Binding Results}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="m:QuizResult">
+                    <Grid ColumnDefinitions="*,Auto" Padding="0,10">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Topic}" FontSize="16" FontAttributes="Bold" />
+                            <Label Text="{Binding Details}" FontSize="12" TextColor="Gray" />
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1" Text="{Binding ScoreText}" VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:QuizApp.ViewModels"
+             x:Class="QuizApp.Views.QuizPage"
+             x:DataType="vm:QuizViewModel"
+             Title="{Binding Topic}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+
+            <Grid ColumnDefinitions="*,Auto">
+                <Label Text="{Binding ProgressText}" />
+                <Label Grid.Column="1" Text="{Binding ScoreText}" FontAttributes="Bold" />
+            </Grid>
+            <ProgressBar Progress="{Binding Progress}" />
+
+            <Label Text="{Binding TimeLeft, StringFormat='Залишилось {0} с'}" HorizontalOptions="End" />
+            <ProgressBar Progress="{Binding TimeProgress}" ProgressColor="Orange" />
+
+            <Label Text="{Binding QuestionText}"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   Margin="0,16" />
+
+            <VerticalStackLayout Spacing="10" BindableLayout.ItemsSource="{Binding Options}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:AnswerOption">
+                        <Button Text="{Binding Text}"
+                                BackgroundColor="{Binding Color}"
+                                TextColor="White"
+                                LineBreakMode="WordWrap"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type vm:QuizViewModel}}, Path=AnswerCommand, x:DataType=vm:QuizViewModel}"
+                                CommandParameter="{Binding .}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <Label Text="{Binding Feedback}"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Далі"
+                    Command="{Binding NextCommand}"
+                    IsVisible="{Binding IsAnswered}" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

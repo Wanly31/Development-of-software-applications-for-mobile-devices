@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="QuizApp" mvid="b8fa35f9cf8b41b99d540d6d8aec914b">
+  <java-to-managed>
+    <entry java-name="crc64a8e878c6dedf0a89/MainActivity" managed-name="QuizApp.MainActivity, QuizApp" managed-type-token-id="33554441" />
+    <entry java-name="crc64a8e878c6dedf0a89/MainApplication" managed-name="QuizApp.MainApplication, QuizApp" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64a8e878c6dedf0a89/MainActivity" managed-name="QuizApp.MainActivity, QuizApp" managed-type-token-id="33554441" />
+    <entry java-name="crc64a8e878c6dedf0a89/MainApplication" managed-name="QuizApp.MainApplication, QuizApp" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>
