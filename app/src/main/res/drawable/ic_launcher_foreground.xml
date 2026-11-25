@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Три корінці книжок на полиці. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#FFF3E0" android:pathData="M34,36h10v34h-10z" />
+    <path android:fillColor="#FFCC80" android:pathData="M47,32h10v38h-10z" />
+    <path android:fillColor="#FFF3E0" android:pathData="M60,40l9,-2 6,31 -9,2z" />
+    <path android:fillColor="#FFF3E0" android:pathData="M30,71h48v4h-48z" />
+</vector>
